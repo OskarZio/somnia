@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d1a">
+<meta name="description" content="Somnia – aplikacja do nauki świadomego śnienia: dziennik snów, znaki snu, budzik WBTB z prowadzonym MILD/SSILD, dźwiękowe cue (TLR), reality checki i statystyki.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Somnia · świadome śnienie</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="lock" class="lock hidden" role="dialog" aria-label="Blokada PIN">
+  <div class="lock-box">
+    <div class="logo-big">☾</div>
+    <h1>Somnia</h1>
+    <p class="muted">Wpisz PIN, żeby otworzyć dziennik</p>
+    <input id="lockPin" type="password" inputmode="numeric" maxlength="8" autocomplete="off" aria-label="PIN">
+    <button id="lockBtn" class="btn primary">Odblokuj</button>
+    <p id="lockErr" class="err"></p>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand"><span class="moon">☾</span> Somnia</div>
+  <div class="top-actions">
+    <button id="rcQuick" class="chip" title="Zrób reality check teraz">Czy śnię?</button>
+  </div>
+</header>
+
+<main id="view" tabindex="-1"></main>
+
+<nav class="tabs" aria-label="Nawigacja">
+  <button data-tab="journal" class="active"><span class="ico">✎</span><span>Dziennik</span></button>
+  <button data-tab="night"><span class="ico">☾</span><span>Noc</span></button>
+  <button data-tab="day"><span class="ico">◎</span><span>Dzień</span></button>
+  <button data-tab="learn"><span class="ico">✦</span><span>Techniki</span></button>
+  <button data-tab="stats"><span class="ico">▤</span><span>Postępy</span></button>
+</nav>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-box" id="modalBox"></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
