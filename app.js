@@ -700,7 +700,7 @@ VIEWS.day = () => {
     <button class="btn primary big block" data-act="rc">Czy śnię? – zrób check</button>
     <hr>
     <label class="switch"><span><b>Przypomnienia w aplikacji</b><br><span class="small muted">losowo, gdy Somnia jest otwarta (także w tle karty)</span></span><input type="checkbox" data-set="inAppRc" ${st.inAppRc ? 'checked' : ''}></label>
-    <div class="grid3">
+    <div class="rc-times">
       <div><label>Od</label><input type="time" data-input="rcStart" value="${st.rcStart}"></div>
       <div><label>Do</label><input type="time" data-input="rcEnd" value="${st.rcEnd}"></div>
       <div><label>Ile dziennie</label><input type="number" min="3" max="30" data-input="rcPerDay" value="${st.rcPerDay}"></div>

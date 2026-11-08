@@ -148,3 +148,13 @@ details[open] .chev { transform: rotate(90deg); } .chev { display: inline-block;
 .rec { color: var(--danger); animation: pulse 1.2s infinite; }
 .kbd { font-family: ui-monospace, monospace; background: #0f1226; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--line); font-size: .85em; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
+
+/* Poprawki układu (iOS): pola nie wychodzą poza karty, pasek górny nie zachodzi na treść */
+.grid2 > *, .grid3 > *, .row > * { min-width: 0; }
+input, select, textarea { min-width: 0; max-width: 100%; }
+input[type=time], input[type=date] { -webkit-appearance: none; appearance: none; display: block; min-height: 46px; text-align: left; }
+input[type=time]::-webkit-date-and-time-value, input[type=date]::-webkit-date-and-time-value { text-align: left; }
+.topbar { background: rgba(11, 13, 26, .92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #1c2040; }
+main { padding-top: 10px; }
+.rc-times { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+@media (max-width: 420px) { .rc-times { grid-template-columns: 1fr 1fr; } .rc-times > :last-child { grid-column: 1 / -1; } }
